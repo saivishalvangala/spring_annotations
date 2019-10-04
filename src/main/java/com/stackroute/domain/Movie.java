@@ -7,6 +7,10 @@ public class Movie {
         this.actor = actor;
     }
 
+    public Movie(Actor actor) {
+        this.actor = actor;
+    }
+
     public void display(){
         actor.displayInfo();
     }

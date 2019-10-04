@@ -4,13 +4,25 @@
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="movie" class="com.stackroute.domain.Movie">
-        <property name="actor">
-            <bean class="com.stackroute.domain.Actor">
-                <property name="name" value="Prabhas"/>
-                <property name="gender" value="Male"/>
-                <property name="age" value="40"/>
-            </bean>
-        </property>
+    <bean id="actor1" class="com.stackroute.domain.Actor">
+        <constructor-arg name="name" value="Prabhas"/>
+        <constructor-arg name="gender" value="Male"/>
+        <constructor-arg name="age" value="40"/>
+    </bean>
+
+    <bean id="actor2" class="com.stackroute.domain.Actor">
+        <constructor-arg name="name" value="Prabhas"/>
+        <constructor-arg name="gender" value="Male"/>
+        <constructor-arg name="age" value="40"/>
+    </bean>
+
+    <bean id="actor3" class="com.stackroute.domain.Actor">
+        <constructor-arg name="name" value="Prabhas"/>
+        <constructor-arg name="gender" value="Male"/>
+        <constructor-arg name="age" value="40"/>
+    </bean>
+
+    <bean name ="movie, movie1" class="com.stackroute.domain.Movie" scope="prototype">
+        <constructor-arg name="actor" ref="actor1"/>
     </bean>
 </beans>
