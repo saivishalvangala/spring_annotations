@@ -1,17 +1,25 @@
 package com.stackroute.domain;
 
-public class Movie {
-    private Actor actor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
-    public void setActor(Actor actor) {
-        this.actor = actor;
-    }
+public class Movie {
+
+    private Actor actor;
 
     public Movie(Actor actor) {
         this.actor = actor;
     }
+    //    @Autowired
+//    @Qualifier("actorObject1")
+//    public void setActor(Actor actor) {
+//       this.actor = actor;
+//    }
 
-    public void display(){
-        actor.displayInfo();
+    @Override
+    public String  toString() {
+        return "Actor name : " +actor.getName() +
+                " Actor age : " + actor.getAge() +
+                " Actor gender :- " + actor.getGender();
     }
 }
