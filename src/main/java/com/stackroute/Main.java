@@ -15,7 +15,7 @@ public class Main {
 
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
         Movie movie = context.getBean("movie",Movie.class);
-        System.out.println(movie.toString());
+        System.out.println(movie);
 
 
     }
