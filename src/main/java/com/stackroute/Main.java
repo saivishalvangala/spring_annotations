@@ -9,20 +9,17 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 import com.stackroute.demo.BeanLifecycleDemoBean;
 
-public class Main {
-    public static void main(String[] args) {
-//        ClassPathResource res = new ClassPathResource("beans.xml");
-//        BeanFactory factory = new XmlBeanFactory(res);
-//        Movie movie1=(Movie)factory.getBean("movie");
-//        movie1.display();
-
+public class Main
+{
+    public static void main( String[] args )
+    {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
-        Movie movie = context.getBean("movie",Movie.class);
+        BeanLifecycleDemoBean beanLifecycleDemoBean = context.getBean(BeanLifecycleDemoBean.class);
+
+        Movie movie = context.getBean("movie", Movie.class);
         System.out.println(movie);
 
-        BeanLifecycleDemoBean beanLifecycleDemoBean = context.getBean(BeanLifecycleDemoBean.class);
         context.registerShutdownHook();
-
-
     }
 }
+
